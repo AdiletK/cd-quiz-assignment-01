@@ -3,6 +3,7 @@ This is a Spring Boot application for managing quizzes. It provides RESTful endp
 
 ### Requirements before running application:
 
+* Docker
 * Java 17
 * Maven
 
