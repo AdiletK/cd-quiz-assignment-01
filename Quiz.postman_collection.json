@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "d0b57cd4-d177-4979-85da-43f83d27701b",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9409250"
+	},
+	"item": [
+		{
+			"name": "Create quiz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Quiz 1\",\n  \"description\": \"The quiz to identify the best!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/quizzes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quizzes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get quiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quizzes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quizzes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update quiz",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Quiz 1 updated\",\n  \"description\": \"Quiz description updated!\",\n  \"status\": \"IN_ACTIVE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/quizzes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quizzes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get quiz list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quizzes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quizzes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add question",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"createdAt\": \"2024-02-15T04:54:07.237Z\",\n  \"updatedAt\": \"2024-02-15T04:54:07.237Z\",\n  \"question\": \"string\",\n  \"answers\": [\n    {\n      \"id\": 0,\n      \"createdAt\": \"2024-02-15T04:54:07.237Z\",\n      \"updatedAt\": \"2024-02-15T04:54:07.237Z\",\n      \"questionId\": 0,\n      \"answer\": \"string\",\n      \"isCorrect\": true\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/quiz-questions/quiz/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz-questions",
+						"quiz",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add answers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"answer\": \"A\",\n    \"isCorrect\": true\n  },\n{\n    \"answer\": \"B\",\n    \"isCorrect\": false\n  },\n{\n    \"answer\": \"C\",\n    \"isCorrect\": false\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/quiz-answers/question/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz-answers",
+						"question",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Adilet\",\n  \"lastName\": \"Kadyrbekov\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Take a quiz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"questionId\": 1,\n    \"answerId\": 1\n  },{\n    \"questionId\": 2,\n    \"answerId\": 5\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/user-answers/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user-answers",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user quiz result",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/user-answers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user-answers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

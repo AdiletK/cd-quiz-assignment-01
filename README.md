@@ -17,3 +17,6 @@ Service runs on 8080 port
 
 ### Swagger
 http://localhost:8080/swagger-ui/index.html#/
+
+### Postman
+There is a postman collection to test (Quiz.postman_collection.json)
